@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 
-data_path = '/Users/geezylucas/Documents/Python379.nosync/facial-recognition/data'
+data_path = '/home/geezylucas/Documentos/Python8/facial-recognition/data'
 people_list = os.listdir(data_path + '/faces')
 
 labels = []
@@ -22,8 +22,8 @@ for name_dir in people_list:
     label = label + 1
 
 
-face_recognizer = cv2.face.EigenFaceRecognizer_create()
-# face_recognizer = cv2.face.FisherFaceRecognizer_create()
+# face_recognizer = cv2.face.EigenFaceRecognizer_create()
+face_recognizer = cv2.face.FisherFaceRecognizer_create()
 # face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 # Entrenado el reconocedor de rostros...
@@ -33,8 +33,8 @@ face_recognizer.train(faces_data, np.array(labels))
 
 # Almacenando el modelo obtenido
 
-face_recognizer.write(data_path + '/modeloEigenFace.xml')
-# face_recognizer.write(data_path + '/modeloFisherFace.xml')
+# face_recognizer.write(data_path + '/modeloEigenFace.xml')
+face_recognizer.write(data_path + '/modeloFisherFace.xml')
 # face_recognizer.write(data_path + '/modeloLBPHFace.xml')
 
 print('Modelo almacenado...')

@@ -3,14 +3,14 @@ import os
 import imutils
 
 person_name = 'Gerardo'
-data_path = '/Users/geezylucas/Documents/Python379.nosync/facial-recognition/data'
+data_path = '/home/geezylucas/Documentos/Python8/facial-recognition/data'
 person_path = data_path + '/faces/' + person_name
 
 if not os.path.exists(person_path):
     print('Carpeta creada: ', person_path)
     os.makedirs(person_path)
 
-cap = cv2.VideoCapture(data_path + '/gerardo2.mov')
+cap = cv2.VideoCapture(data_path + '/gerardo1.mp4')
 
 face_classif = cv2.CascadeClassifier(
     cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')

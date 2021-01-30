@@ -10,12 +10,12 @@ if not os.path.exists(person_path):
     print('Carpeta creada: ', person_path)
     os.makedirs(person_path)
 
-cap = cv2.VideoCapture(data_path + '/geezy.mov')
+cap = cv2.VideoCapture(data_path + '/gerardo2.mov')
 
 face_classif = cv2.CascadeClassifier(
     cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
 
-count = 0
+count = 168
 
 while True:
     ret, frame = cap.read()
@@ -38,7 +38,7 @@ while True:
     cv2.imshow('frame', frame)
 
     k = cv2.waitKey(1)
-    if k == 27 or count >= 300:
+    if k == 27 or count >= 500:
         break
 
 cap.release()

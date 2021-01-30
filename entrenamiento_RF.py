@@ -22,9 +22,9 @@ for name_dir in people_list:
     label = label + 1
 
 
-# face_recognizer = cv2.face.EigenFaceRecognizer_create()
+face_recognizer = cv2.face.EigenFaceRecognizer_create()
 # face_recognizer = cv2.face.FisherFaceRecognizer_create()
-face_recognizer = cv2.face.LBPHFaceRecognizer_create()
+# face_recognizer = cv2.face.LBPHFaceRecognizer_create()
 
 # Entrenado el reconocedor de rostros...
 print('Entrenando....')
@@ -33,7 +33,8 @@ face_recognizer.train(faces_data, np.array(labels))
 
 # Almacenando el modelo obtenido
 
-# face_recognizer.write('modeloEigenFace.xml')
-face_recognizer.write(data_path + '/modeloLBPHFace.xml')
+face_recognizer.write(data_path + '/modeloEigenFace.xml')
+# face_recognizer.write(data_path + '/modeloFisherFace.xml')
+# face_recognizer.write(data_path + '/modeloLBPHFace.xml')
 
 print('Modelo almacenado...')
